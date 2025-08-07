@@ -41,7 +41,7 @@ header {
 
 .container-week {
     background-color: rgb(166, 238, 214);
-    height: 100px;
+    height: 150px;
     width: auto;
     display: flex;
     align-items: center;
