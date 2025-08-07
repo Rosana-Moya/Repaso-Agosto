@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height: auto;
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    flex-wrap: wrap;
+}
+
+.container-age {
+    height: 80px;
+    background-color: aqua;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.input-age {
+    height: 40px;
+    width: auto;
+    font-size: 20px;
+}
+
+.button-age {
+    background-color: antiquewhite;
+    border-radius: 5px;
+    height: 40px;
+    width: auto;
+    font-size: 20px;
+}
+
+.container-week {
+    background-color: rgb(166, 238, 214);
+    height: 100px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.input-week {
+    height: 40px;
+    width: auto;
+    font-size: 20px;
+}
+
+.button-week {
+    background-color: rgb(245, 211, 166);
+    border-radius: 5px;
+    height: 40px;
+    width: auto;
+    font-size: 20px;
+}
