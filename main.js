@@ -4,7 +4,7 @@ console.log("Ready");
 
 // MAYOR O MENOR DE EDAD:
 
-const input = document.querySelector(".input-age");
+const inputAge = document.querySelector(".input-age");
 // Busca en el HTML el <input> con la clase input-age y lo guarda en la variable input.
 // Así podemos usar esa variable para leer lo que el usuario escribió
 const button = document.querySelector(".button-age");
@@ -13,7 +13,7 @@ const mensaje = document.querySelector(".age-mens"); // seleccionamos el <p>
 
 button.addEventListener("click", function () {
     //Le decimos al botón: "Cuando alguien haga clic sobre ti, ejecuta esta función".
-  const edad = parseInt(input.value);
+  const edad = parseInt(inputAge.value);
 //   Lee lo que el usuario escribió en el input (input.value) y lo convierte a número entero con parseInt().
 // Guarda ese número en la variable edad.
 
@@ -27,17 +27,20 @@ button.addEventListener("click", function () {
     return; //Detiene la función para que no siga ejecutando las siguientes condiciones.
   }
 
-  if (edad >= 18) {  //Si la edad es 18 o más, entonces:
+  if (edad >= 18 && edad <= 120) {  //Si la edad es 18 o más, entonces:
     mensaje.textContent = "Eres mayor de edad";   //Muestra el mensaje correspondiente.
     mensaje.style.color = "green"; //Y lo muestra en verde.
-  } else {     //Si la edad no es mayor o igual a 18 (es decir, es menor), entonces:
+  } else if (edad >= 0 && edad < 18) {     //Si la edad no es mayor o igual a 18 (es decir, es menor), entonces:
     mensaje.textContent = "Eres menor de edad";   //Muestra el mensaje de "menor de edad".
+    mensaje.style.color = "red";  //En color rojo.
+  } else {
+    mensaje.textContent = "Edad no válida";   //Muestra el mensaje de "menor de edad".
     mensaje.style.color = "red";  //En color rojo.
   }
 });   //Cierra la función que se ejecuta al hacer clic en el botón.
 
 //Cada vez que el usuario hace clic o enfoca el input para escribir otra vez, se borra el mensaje del párrafo:
-input.addEventListener("focus", function () {
+inputAge.addEventListener("focus", function () {
   mensaje.textContent = "";
 });
 
@@ -48,12 +51,15 @@ const buttonWeek = document.querySelector(".button-week");
 const mensajeWeek = document.querySelector(".week-mens");
 
 // Añadimos un "escuchador de eventos" al botón
+inputWeek.addEventListener("input", function () {
+  mensajeWeek.textContent = "";
+});
+
 // Cuando se haga clic, se ejecuta la función
 buttonWeek.addEventListener("click", function () {
 
   //Obtenemos el valor del <select> y lo pasamos a minúsculas por seguridad
   const dia = inputWeek.value.toLowerCase();
-
   // Evaluamos el valor usando la estructura switch
   switch (dia) {
 
