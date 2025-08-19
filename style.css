@@ -65,3 +65,21 @@ header {
     width: auto;
     font-size: 20px;
 }
+
+.container-func {
+    background-color: rgb(196, 239, 239);
+    height: 200px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    font-size: 30px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.p-func {
+    display: flex;
+    justify-content: right;
+    padding-left: 20px;
+}
