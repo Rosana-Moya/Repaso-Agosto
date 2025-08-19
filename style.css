@@ -67,12 +67,13 @@ header {
 }
 
 .container-func {
+    padding: 20px;
     background-color: rgb(196, 239, 239);
-    height: 200px;
+    height: auto;
     width: auto;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center; 
     font-size: 30px;
     flex-wrap: wrap;
     gap: 8px;
@@ -82,4 +83,13 @@ header {
     display: flex;
     justify-content: right;
     padding-left: 20px;
+    color: rgb(1, 55, 101);
+    
+}
+
+.input--select {
+    height: 40px;
+    width: auto;
+    font-size: 20px;
+    font-weight: 200;
 }

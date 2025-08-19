@@ -106,3 +106,53 @@ buttonWeek.addEventListener("click", function () {
       mensajeWeek.textContent = "Por favor, elige un día de la lista.";
   }
 });
+
+// FUNCIONES
+
+const photos = { 
+  'Indominus': [
+  'https://pm1.aminoapps.com/7949/2a81c23a22e3cdc0e91bc317483f5f01cab2a58dr1-734-391v2_hq.jpg',
+  'https://www.shutterstock.com/shutterstock/photos/2289953095/display_1500/stock-photo-indominus-rex-isolated-yellow-background-2289953095.jpg',
+  'https://scontent.fvlc1-2.fna.fbcdn.net/v/t39.30808-6/482246130_1382986739721483_620699147502441382_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=OkxoYYJdfHsQ7kNvwFTLdqb&_nc_oc=AdnXI6OHUs70eRPT_rnz0YTZoRcvTuyPtoZueBAyNaAHKA7avAylAh5M3zV2jWWyNmg&_nc_zt=23&_nc_ht=scontent.fvlc1-2.fna&_nc_gid=ARgvJMBw4UiCrb4hKndu7A&oh=00_AfU0Q1DWqcHi69hD4RF3VVMm9J3NsVJeLtnNvTF9EGRGVg&oe=68AA3152'
+],
+
+'Indoraptor': [
+  'https://static.wikia.nocookie.net/jurassicpark/images/e/eb/Jurassic_world_fallen_kingdom_indoraptor_3.0_by_sonichedgehog2-dcc96yw.png/revision/latest/scale-to-width-down/1000?cb=20250701022509',
+  'https://i.pinimg.com/1200x/28/8c/40/288c407e6017dacbd3ad0d5874ac6e49.jpg',
+  'https://preview.redd.it/the-indoraptor-is-the-saddest-hybrid-v0-i8889vdnoqyd1.jpg?width=640&crop=smart&auto=webp&s=3e3869ead31ff6e88cfc4528e2281dcd60215e84'
+],
+
+'Blue' : [
+  'https://i.pinimg.com/1200x/91/59/a5/9159a5171d069c56ea2b022460508876.jpg',
+  'https://images3.alphacoders.com/122/thumb-1920-1225600.jpg',
+  'https://darksidetoy.com/images/virtuemart/product/x_p1slmcjw2-08_d%20(2).jpg'
+]
+};
+
+// SECCIÓN DE QUERY-SELECTORS (elementos que usamos de la página)
+
+const dinoSelect = document.querySelector('.js_dino');
+const imgElements = document.querySelector('.js_photo');
+
+// SECCIÓN DE FUNCIONES
+
+const photosOfDinoSelected = photos[dino];
+const numPhotos = Math.min(photosOfDinoSelected.length, imgElements.length);
+
+for (let i=0; i<numPhotos; i++) {
+  imgElements[i].setAttribute('src',photosOfDinoSelected[i]);
+  imgElements[i].setAttribute('alt', `Foto número ${i} de ${dino}`);
+};
+
+// SECCIÓN DE FUNCIONES DE EVENTOS
+
+const handleInputSelectDino = (ev) => {
+  const dinoSelected = dinoSelect.value;
+
+  renderDinoPhotos(dinoSelected);
+}
+
+// SECCIÓN DE EVENTOS
+
+dinoSelect.addEventListener('input', handleInputSelectDino);
+//falta botón
