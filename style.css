@@ -93,3 +93,43 @@ header {
     font-size: 20px;
     font-weight: 200;
 }
+
+
+/* .photos-dinoContainer img {
+    width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 5px; /* espacio entre imágenes */
+    /* flex-wrap: wrap; /* por si se reduce el ancho */
+    /* padding: 5px;
+}
+
+.photos-dinoContainer img {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+} */ */ */
+
+/* GRID DINOS 3 FOTOS CENTRADAS: */
+.js_photoContainer {
+   background-color: #C4EFEF;
+}
+
+.photos-dinoContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #C4EFEF;
+}
+
+.photos-dinoContainer img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+

@@ -108,51 +108,100 @@ buttonWeek.addEventListener("click", function () {
 });
 
 // FUNCIONES
+//3 FOTOS DINOS
+ const photos = { 
+   'indominus': [
+    'https://pm1.aminoapps.com/7949/2a81c23a22e3cdc0e91bc317483f5f01cab2a58dr1-734-391v2_hq.jpg',
+   'https://www.shutterstock.com/shutterstock/photos/2289953095/display_1500/stock-photo-indominus-rex-isolated-yellow-background-2289953095.jpg',
+   'https://scontent.fvlc1-2.fna.fbcdn.net/v/t39.30808-6/482246130_1382986739721483_620699147502441382_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=OkxoYYJdfHsQ7kNvwFTLdqb&_nc_oc=AdnXI6OHUs70eRPT_rnz0YTZoRcvTuyPtoZueBAyNaAHKA7avAylAh5M3zV2jWWyNmg&_nc_zt=23&_nc_ht=scontent.fvlc1-2.fna&_nc_gid=ARgvJMBw4UiCrb4hKndu7A&oh=00_AfU0Q1DWqcHi69hD4RF3VVMm9J3NsVJeLtnNvTF9EGRGVg&oe=68AA3152'
+ ],
 
-const photos = { 
-  'Indominus': [
-  'https://pm1.aminoapps.com/7949/2a81c23a22e3cdc0e91bc317483f5f01cab2a58dr1-734-391v2_hq.jpg',
-  'https://www.shutterstock.com/shutterstock/photos/2289953095/display_1500/stock-photo-indominus-rex-isolated-yellow-background-2289953095.jpg',
-  'https://scontent.fvlc1-2.fna.fbcdn.net/v/t39.30808-6/482246130_1382986739721483_620699147502441382_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=OkxoYYJdfHsQ7kNvwFTLdqb&_nc_oc=AdnXI6OHUs70eRPT_rnz0YTZoRcvTuyPtoZueBAyNaAHKA7avAylAh5M3zV2jWWyNmg&_nc_zt=23&_nc_ht=scontent.fvlc1-2.fna&_nc_gid=ARgvJMBw4UiCrb4hKndu7A&oh=00_AfU0Q1DWqcHi69hD4RF3VVMm9J3NsVJeLtnNvTF9EGRGVg&oe=68AA3152'
-],
+ 'indoraptor': [
+   'https://pm1.aminoapps.com/6926/377f8c20125be2184f6d5f7360b0582e1926c76ar1-459-203v2_hq.jpg',
+   'https://i.pinimg.com/1200x/28/8c/40/288c407e6017dacbd3ad0d5874ac6e49.jpg',
+   'https://preview.redd.it/the-indoraptor-is-the-saddest-hybrid-v0-i8889vdnoqyd1.jpg?width=640&crop=smart&auto=webp&s=3e3869ead31ff6e88cfc4528e2281dcd60215e84'
+ ],
 
-'Indoraptor': [
-  'https://static.wikia.nocookie.net/jurassicpark/images/e/eb/Jurassic_world_fallen_kingdom_indoraptor_3.0_by_sonichedgehog2-dcc96yw.png/revision/latest/scale-to-width-down/1000?cb=20250701022509',
-  'https://i.pinimg.com/1200x/28/8c/40/288c407e6017dacbd3ad0d5874ac6e49.jpg',
-  'https://preview.redd.it/the-indoraptor-is-the-saddest-hybrid-v0-i8889vdnoqyd1.jpg?width=640&crop=smart&auto=webp&s=3e3869ead31ff6e88cfc4528e2281dcd60215e84'
-],
+ 'blue' : [
+   'https://i.pinimg.com/1200x/91/59/a5/9159a5171d069c56ea2b022460508876.jpg',
+   'https://images3.alphacoders.com/122/thumb-1920-1225600.jpg',
+   'https://darksidetoy.com/images/virtuemart/product/x_p1slmcjw2-08_d%20(2).jpg'
+ ]
+ };
 
-'Blue' : [
-  'https://i.pinimg.com/1200x/91/59/a5/9159a5171d069c56ea2b022460508876.jpg',
-  'https://images3.alphacoders.com/122/thumb-1920-1225600.jpg',
-  'https://darksidetoy.com/images/virtuemart/product/x_p1slmcjw2-08_d%20(2).jpg'
-]
-};
+// // SECCIÓN DE QUERY-SELECTORS (elementos que usamos de la página)
 
-// SECCIÓN DE QUERY-SELECTORS (elementos que usamos de la página)
+//  const dinoSelect = document.querySelector('.js_dino');
+//  const imgElements = document.querySelectorAll('.js_photo');
 
+// // // SECCIÓN DE FUNCIONES
+
+//  const photosOfDinoSelected = photos[dinoSelected];
+// // //Calcula el número mínimo entre:
+// // //Las fotos disponibles para ese dinosaurio.
+// // //La cantidad de elementos de imagen (<img>) en la página.
+// // //Así se asegura de no acceder a posiciones que no existen ni en el arreglo de fotos ni en el DOM:
+//  const numPhotos = Math.min(photosOfDinoSelected.length, imgElements.length);
+
+// // //Bucle que recorre cada imagen hasta numPhotos:
+//  for (let i=0; i<numPhotos; i++) {
+//    imgElements[i].setAttribute('src',photosOfDinoSelected[i]);
+// // //Cambia el atributo alt (texto alternativo) para mejorar la accesibilidad y el SEO.
+// // //Se usa una cadena de texto dinámica con template strings:
+//   imgElements[i].setAttribute('alt', `Foto número ${i} de ${dino}`);
+//  };
+
+// // // SECCIÓN DE FUNCIONES DE EVENTOS
+// // //Define una función flecha que se ejecutará cuando el usuario cambie la selección del <select> de dinosaurios:
+//    const handleInputSelectDino = (ev) => {
+// //   //Obtiene el valor del <select> actual, es decir, el dinosaurio elegido por el usuario:
+//    const dinoSelected = dinoSelect.value;
+// // //Llama a una función (que no está en el código que mostraste) para mostrar las nuevas fotos del dinosaurio seleccionado:
+//    renderDinoPhotos(dinoSelected);
+//  }
+
+// // // SECCIÓN DE EVENTOS
+// // //Añade un listener al <select> (dinoSelect) para escuchar cuando el usuario cambia la opción seleccionada.
+// // //Cuando eso pasa, se llama a la función handleInputSelectDino:
+//    dinoSelect.addEventListener('input', handleInputSelectDino);
+// //falta botón?
+
+//CHAT GPT:
+// Query-selectors
 const dinoSelect = document.querySelector('.js_dino');
-const imgElements = document.querySelector('.js_photo');
+const photoContainer = document.querySelector('.js_photoContainer');
 
-// SECCIÓN DE FUNCIONES
+// Función actualizada para renderizar imágenes dinámicamente
+const renderDinoPhotos = (dinoSelected) => {
+  // Limpia el contenedor antes de agregar nuevas imágenes
+  photoContainer.innerHTML = '';
 
-const photosOfDinoSelected = photos[dino];
-const numPhotos = Math.min(photosOfDinoSelected.length, imgElements.length);
+  if (dinoSelected === 'default') {
+    const img = document.createElement('img');
+    img.setAttribute('src', 'https://thumbs.dreamstime.com/b/ninguna-conexi%C3%B3n-internet-error-off-line-p%C3%A1gina-web-que-no-carga-dinosaurio-negro-119559692.jpg');
+    img.setAttribute('alt', 'Esperando selección');
+    photoContainer.appendChild(img);
+    return;
+  }
 
-for (let i=0; i<numPhotos; i++) {
-  imgElements[i].setAttribute('src',photosOfDinoSelected[i]);
-  imgElements[i].setAttribute('alt', `Foto número ${i} de ${dino}`);
+  const photosOfDinoSelected = photos[dinoSelected];
+  if (!photosOfDinoSelected) return;
+
+  // Crea un <img> por cada URL del dinosaurio
+  photosOfDinoSelected.forEach((url, index) => {
+    const img = document.createElement('img');
+    img.setAttribute('src', url);
+    img.setAttribute('alt', `Foto número ${index + 1} del dinosaurio ${dinoSelected}`);
+    img.style.margin = '5px'; // Opcional, para visual
+    photoContainer.appendChild(img);
+  });
 };
 
-// SECCIÓN DE FUNCIONES DE EVENTOS
+// Evento al cambiar el select
+dinoSelect.addEventListener('input', (ev) => {
+  renderDinoPhotos(ev.target.value);
+});
 
-const handleInputSelectDino = (ev) => {
-  const dinoSelected = dinoSelect.value;
+// Mostrar imagen por defecto al cargar la página
+renderDinoPhotos('default');
 
-  renderDinoPhotos(dinoSelected);
-}
-
-// SECCIÓN DE EVENTOS
-
-dinoSelect.addEventListener('input', handleInputSelectDino);
-//falta botón
