@@ -184,9 +184,32 @@ renderDinoPhotos('default');
 
 
 //ALERT, FUNCIÓN BÁSICA:
-const containerAlert = document.querySelector('.container-alert')
+
+// ASI NO FUNCIONA EN MOVIL:
+// const containerAlert = document.querySelector('.container-alert')
+// const buttonAlert = document.querySelector('.button-alert');
+
+//  buttonAlert.addEventListener("click", () => {
+//    alert("PINUEVE.");
+//  });
+
+//CAMBIO ALERT POR VENTANA PERSONALIZADA:
 const buttonAlert = document.querySelector('.button-alert');
+const modal = document.getElementById('modal');
+const closeBtn = document.getElementById('close-btn');
 
 buttonAlert.addEventListener("click", () => {
-  alert("PINUEVE.");
+  modal.style.display = 'flex'; // Mostrar modal
 });
+
+closeBtn.addEventListener("click", () => {
+  modal.style.display = 'none'; // Ocultar modal
+});
+
+// Opcional: cerrar modal al hacer clic fuera del contenido
+window.addEventListener("click", (event) => {
+  if(event.target === modal){
+    modal.style.display = 'none';
+  }
+});
+
