@@ -129,44 +129,6 @@ buttonWeek.addEventListener("click", function () {
  ]
  };
 
-// // SECCIÓN DE QUERY-SELECTORS (elementos que usamos de la página)
-
-//  const dinoSelect = document.querySelector('.js_dino');
-//  const imgElements = document.querySelectorAll('.js_photo');
-
-// // // SECCIÓN DE FUNCIONES
-
-//  const photosOfDinoSelected = photos[dinoSelected];
-// // //Calcula el número mínimo entre:
-// // //Las fotos disponibles para ese dinosaurio.
-// // //La cantidad de elementos de imagen (<img>) en la página.
-// // //Así se asegura de no acceder a posiciones que no existen ni en el arreglo de fotos ni en el DOM:
-//  const numPhotos = Math.min(photosOfDinoSelected.length, imgElements.length);
-
-// // //Bucle que recorre cada imagen hasta numPhotos:
-//  for (let i=0; i<numPhotos; i++) {
-//    imgElements[i].setAttribute('src',photosOfDinoSelected[i]);
-// // //Cambia el atributo alt (texto alternativo) para mejorar la accesibilidad y el SEO.
-// // //Se usa una cadena de texto dinámica con template strings:
-//   imgElements[i].setAttribute('alt', `Foto número ${i} de ${dino}`);
-//  };
-
-// // // SECCIÓN DE FUNCIONES DE EVENTOS
-// // //Define una función flecha que se ejecutará cuando el usuario cambie la selección del <select> de dinosaurios:
-//    const handleInputSelectDino = (ev) => {
-// //   //Obtiene el valor del <select> actual, es decir, el dinosaurio elegido por el usuario:
-//    const dinoSelected = dinoSelect.value;
-// // //Llama a una función (que no está en el código que mostraste) para mostrar las nuevas fotos del dinosaurio seleccionado:
-//    renderDinoPhotos(dinoSelected);
-//  }
-
-// // // SECCIÓN DE EVENTOS
-// // //Añade un listener al <select> (dinoSelect) para escuchar cuando el usuario cambia la opción seleccionada.
-// // //Cuando eso pasa, se llama a la función handleInputSelectDino:
-//    dinoSelect.addEventListener('input', handleInputSelectDino);
-// //falta botón?
-
-//CHAT GPT:
 // Query-selectors
 const dinoSelect = document.querySelector('.js_dino');
 const photoContainer = document.querySelector('.js_photoContainer');
@@ -181,11 +143,12 @@ const renderDinoPhotos = (dinoSelected) => {
     img.setAttribute('src', 'https://thumbs.dreamstime.com/b/ninguna-conexi%C3%B3n-internet-error-off-line-p%C3%A1gina-web-que-no-carga-dinosaurio-negro-119559692.jpg');
     img.setAttribute('alt', 'Esperando selección');
     photoContainer.appendChild(img);
-    return;
+     return;
   }
 
+  
   const photosOfDinoSelected = photos[dinoSelected];
-  if (!photosOfDinoSelected) return;
+  if (!photosOfDinoSelected) return;   //Realmente no hace nada?
 
   // Crea un <img> por cada URL del dinosaurio
   photosOfDinoSelected.forEach((url, index) => {
@@ -207,7 +170,7 @@ const renderDinoPhotos = (dinoSelected) => {
 // ✅ En resumen:
 
 // 📦 Cuando el usuario selecciona un dinosaurio en el <select>, este código:
-// Escucha el cambio (input o change).
+// Escucha el cambio (input).
 // Captura el valor seleccionado (ev.target.value).
 // Llama a la función renderDinoPhotos() y le pasa ese valor.
 // Esa función muestra las fotos del dinosaurio elegido.
@@ -219,3 +182,11 @@ dinoSelect.addEventListener('input', (ev) => {
 // Mostrar imagen por defecto al cargar la página
 renderDinoPhotos('default');
 
+
+//ALERT, FUNCIÓN BÁSICA:
+const containerAlert = document.querySelector('.container-alert')
+const buttonAlert = document.querySelector('.button-alert');
+
+buttonAlert.addEventListener("click", () => {
+  alert("PINUEVE.");
+});
