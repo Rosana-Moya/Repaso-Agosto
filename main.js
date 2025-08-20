@@ -197,8 +197,22 @@ const renderDinoPhotos = (dinoSelected) => {
   });
 };
 
-// Evento al cambiar el select
-dinoSelect.addEventListener('input', (ev) => {
+// Evento al cambiar el select:
+//dinoSelect es una variable que hace referencia al elemento <select> del HTML
+// .addEventListener('input', ...) significa que estamos escuchando un evento.
+// 'input' es el tipo de evento: se activa cuando el usuario cambia el valor del <select>.
+// ev es el objeto de evento, que contiene información sobre qué ocurrió (por ejemplo, qué elemento se modificó).
+// ev.target es el elemento que activó el evento, en este caso el <select>
+// ev.target.value es el valor seleccionado en el <select>, como "blue" o "indominus".
+// ✅ En resumen:
+
+// 📦 Cuando el usuario selecciona un dinosaurio en el <select>, este código:
+// Escucha el cambio (input o change).
+// Captura el valor seleccionado (ev.target.value).
+// Llama a la función renderDinoPhotos() y le pasa ese valor.
+// Esa función muestra las fotos del dinosaurio elegido.
+
+dinoSelect.addEventListener('input', (ev) => { 
   renderDinoPhotos(ev.target.value);
 });
 
